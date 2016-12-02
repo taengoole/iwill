@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+  <title>Gungdong</title>
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+</head>
+<body>
+  <nav class="light-blue lighten-1" role="navigation">
+    <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo"><img src= "<%= image_path "logo_Gungdong.png"%>" height="30" width="30"></a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="#">Random Gung-dong</a></li>
+      </ul>
+
+      <ul id="nav-mobile" class="side-nav">
+        <li><a href="#">Random Gung-dong</a></li>
+      </ul>
+      <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+    </div>
+  </nav>
+  <div class="section no-pad-bot" id="index-banner">
+    <div class="container">
+      <br>
+      <div class="fields">
+      <div class="row center">
+        <h4 class="header col s12 light">오늘은 여기 어때요?</h4>
+        <div class="fixed-action-btn">
+          <a class="btn-floating btn-large waves-effect waves-light orange" href="/home/index">
+            <i class="material-icons">refresh</i></a>
+        </div>
+			<div class="container" style="margin-top:40px">
+				<% @main_random.each do |m| %>
+					<h3 class="header center orange-text"><b><%= m.title %></b></h3>
+					<p>대표메뉴 : <%= m.content %><br>
+					 <%= m.explainshort %><br></p>
+					<img src = "<%= image_path m.title.to_s + ".jpg" %>" height="200" width="270">
+
+			<% end %>
+      
+			<br><br><br>
+			</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <footer class="page-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text">Random Gungdong</h5>
+          <p class="grey-text text-lighten-4">매일 쪽문 넘어서까지 "아.. 무ㅓ머ㅓㄱㅈㅣㅣㅣ..."<br> 세상에서 가장 심각한 고민을 하고 있는 우리 학우들의 고민을 덜고자
+
+        </div>
+        <div class="col l3 s12">
+          <h5 class="white-text">주의사항</h5>
+          <ul>
+            <li><p class="white-text">위 서비스는 지극히 주관적인 개인의 입맛이 담겨있습니다.</p></li>
+          </ul>
+        </div>
+        <div class="col l3 s12">
+          <h5 class="white-text">제보하기</h5>
+          <ul>
+            <li><p class="white-text">taengoole@gmail.com</p></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright black">
+      <div class="container">
+      Made by <a class="orange-text text-lighten-3">멋쟁이사자차럼 4기 김태영</a>
+      </div>
+    </div>
+  </footer>
+
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="js/materialize.js"></script>
+  <script src="js/init.js"></script>
+
+  </body>
+</html>
+
